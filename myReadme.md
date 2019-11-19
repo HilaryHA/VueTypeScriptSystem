@@ -97,8 +97,8 @@
 ### 备注说明
 -----
 1. **UI组件库：iviewUI标签的使用**  
-    1. 注意 <Switch> 和 <Circle> 这两个标签的使用
-        * 需要改成 <i-switch>和 <i-circle>才能正常使用，参考[这里](https://www.iviewui.com/docs/guide/start "快速上手 - iVeiw")  
+    1. 注意 `<Switch>` 和 `<Circle>` 这两个标签的使用
+        * 需要改成 `<i-switch>` 和 `<i-circle>` 才能正常使用，参考[这里](https://www.iviewui.com/docs/guide/start "快速上手 - iVeiw")  
 
 
 ******
