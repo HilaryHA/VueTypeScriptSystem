@@ -1,0 +1,19 @@
+// 英文对应的样式
+.app-en-lang {
+    .mu_login_form {
+        .ivu-form-item-label {
+            width: 100px !important;
+        }
+        .ivu-form-item-content {
+            margin-left: 100px !important;
+        }
+    }
+    .v_layout_menu {
+        .menu-item span {
+            width: 86px;
+        }
+        .collapsed-menu span {
+            width: 0px;
+        }
+    }
+}
