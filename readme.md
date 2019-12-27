@@ -123,10 +123,10 @@
 
 |展示图|
 |---
-|![image](https://github.com/HilaryHA/VueTypeScriptSystem/blob/master/static/img/showGif/1_0.gif)
-|![image](https://github.com/HilaryHA/VueTypeScriptSystem/blob/master/static/img/showGif/1_1.gif)
-|![image](https://github.com/HilaryHA/VueTypeScriptSystem/blob/master/static/img/showGif/1_2.gif)
-|![image](https://github.com/HilaryHA/VueTypeScriptSystem/blob/master/static/img/showGif/1_3.gif)
+|![image](https://github.com/HilaryHA/VueTypeScriptSystem/blob/master/public/static/sampleGraph/vue_1.gif)
+|![image](https://github.com/HilaryHA/VueTypeScriptSystem/blob/master/public/static/sampleGraph/vue_2.gif)
+|![image](https://github.com/HilaryHA/VueTypeScriptSystem/blob/master/public/static/sampleGraph/swagger_1.gif)
+|![image](https://github.com/HilaryHA/VueTypeScriptSystem/blob/master/public/static/sampleGraph/swagger_2.gif)
 
 
 
