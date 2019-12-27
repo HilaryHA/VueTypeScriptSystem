@@ -84,6 +84,14 @@
 
     6. `src/components` 目录： 存放 *.vue组件
         * `src/components/common` 目录： 存放公共组件
+    
+    7. 自带文件说明  
+        * `tsconfig.json`  typescript的配置文件，目前不需要关注里面的内容  
+        * `tslint.json`  typescript语法检查的配置文件建议不做更改
+        * `package.json`  工程配置文件，可以修改其中的工程名和版本
+        * `package-lock.json`  解析后的工程配置文件，不要手动修改这个文件
+        * `babel.config.js`  babel配置，babel是js编译的工具，用来将ts转换为js
+        * `.gitignore`  git的忽略文件配置，vue cli体贴的直接给项目目录初始化了git
 
 
 2. **运行说明**
@@ -91,6 +99,13 @@
         *  ```Bash 
                npm install  
                npm run serve  
+           ``` 
+
+    2. 在 `mock-server` 目录下执行以下命令
+        *  ```Bash 
+               npm install  
+               swagger project start  
+               swagger project edit     
            ```
 
 *****

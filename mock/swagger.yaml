@@ -1,0 +1,145 @@
+openapi: 3.0.0
+info:
+  description: Mock API for vue-typeScript-system.
+  version: 1.0.0
+  title: Mock API
+  contact:
+    email: hilaryha@qq.com
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+host: 9956
+basePath: /mockTest
+# servers:
+#   - url: /mock-api/v1
+tags:
+  - name: tables
+    description: Tables data related api.
+paths:
+  /tables:
+    get:
+      tags: 
+        - tables
+      summary: Get Tables List
+      description: Return a list of tables.
+      parameters: 
+        - name: name
+          in: query
+          description: Used to filter tables by matched name substring.
+          schema:
+            $ref: '#/components/schemas/Tables/properties/name'
+        - name: page
+          in: query
+          description: The wanted page number (one page).
+          schema:
+            type: integer
+            format: int32
+            minimum: 1
+        - name: limit
+          in: query
+          description: The maximum number of tables returned for one page.
+          schema:
+            type: integer
+            format: int32
+            minimum: 0
+            maximum: 50
+        - name: sort
+          in: query
+          description: Optional sorting order for tables.
+          schema:
+            type: string
+            enum:
+              - +id
+              - -id  
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: integer
+                    format: int32
+                  data:
+                    type: object
+                    properties:
+                      total:
+                        type: integer
+                        format: int32
+                      items:
+                        type: array
+                        items:
+                          $ref: '#/components/schemas/Tables'  
+
+components:
+  securitySchemes:
+    AccessTokenAuth:
+      type: apiKey
+      in: header
+      name: X-Access-Token
+  responses:
+    NotFound:
+      description: The specified resource was not found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Unauthorized:
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    InvalidUser:
+      description: Invalid username supplied
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+  schemas:
+    Error:
+      type: object
+      properties:
+        code:
+          type: integer
+          format: int64
+        info:
+          type: string
+      required:
+        - code
+        - info
+    Tables:
+      type: object
+      properties:
+        name:
+          type: string
+          example: Hilay
+        age:
+          type: integer
+          format: int64
+        ip:
+          type: string
+          example: '192.168.7.67'
+        address:
+          type: string
+          example: shanghai
+        date:
+          type: string
+          format: date
+          example: '2019-11-11'
+      required:
+       - name
+       - age
+       - address
+       - date
+    Timestamp:
+      oneOf:
+      - type: integer
+        format: int32
+        example: 1559605283
+      - type: string
+        format: date-time
+        example: 2017-07-21T17:32:28Z
+    AnyValue: {}

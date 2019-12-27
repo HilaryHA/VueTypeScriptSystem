@@ -132,6 +132,10 @@ export default class MyLogin extends Vue {
           key: 'username',
           value: (this.$refs[name] as any).model.name
         })
+        this.setStateData({
+          key: 'token',
+          value: `${(this.$refs[name] as any).model.name}_${Date.now()}`
+        })
         this.$router.push('/option2/first')
       } else {
         this.$Message.error("信息没填完啦!");

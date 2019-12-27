@@ -9,13 +9,3 @@ import Cookie from 'js-cookie'
 const languageKey = 'language'
 export const getLanguage = () => Cookie.get('language')
 export const setLanguage = (language: string) => Cookie.set(languageKey, language)
-
-// 安装 js-cookie
-
-// 封装 cookies文件
-
-// 整理布局组件
-
-// 使用切换语言，即实现国际化
-
-// 研究如何换肤？？（应该和ElementUI 大同小异， 可以的哈哈）

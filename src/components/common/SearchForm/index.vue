@@ -27,12 +27,23 @@
 import { Component, Vue, Watch } from "vue-property-decorator";
 import { Getter, Action } from "vuex-class";
 
+// 定义接口类型
+interface SearchForm {
+  date: Array<Date>,
+  user: string,
+  startDate?: string | Date,
+  endDate?: string | Date
+}
+
 @Component
-export default class MySearchForm extends Vue {
+export default class MySearchForm extends Vue {  
+
   // 默认data数据
-  formInline: Object = {
+  formInline: SearchForm = {
     date: [],
-    user: ""
+    user: "",
+    startDate: "",
+    endDate: ""
   };
   ruleInline: Object = {
     user: [
@@ -69,52 +80,49 @@ export default class MySearchForm extends Vue {
   }
 
   // 默认methods
-  public handleSearch(formName: string): void {
-    console.log("====================================");
-    console.log(this.$refs[formName]);
-    console.log(this.$refs[formName].model);
-    console.log("====================================");
+  /**
+   * [formName] '?' 表示非必填参数
+   * void 表示该函数返回数据
+   */
+  public handleSearch(formName?: string): void {   
+    // 父组件需要定义此函数 
+    (this.$parent as any).initData()
   }
 
   /**
    * 修改input输入框user时
    */
   public inputChange($val: any): void{
-    // console.log('==============inputChange======================');
-    // console.log(this.formInline.user,$val, arguments);
-    // console.log('====================================');
     this.setStateData({
       key: 'name',
       value: this.formInline.user
     })
-    // console.log('this.name---------', this.name)
   }
 
   /**
    * 修改日期数据时
    */
   public dateChange($val: Date[]): void{
-    // console.log('================dateChange====================');
-    // console.log(this.formInline.date,$val, arguments);
-    // console.log('====================================');
+    this.formInline.date = [...$val]
+    this.formInline.startDate = $val[0]
+    this.formInline.endDate = $val[1]
     this.setStateData({
       key: 'date',
       value: $val
     })
-    // console.log('this.date---------', this.date)
   }
 
   /**
    * 初始化数据，根据store的state数据变化
    */
-  public initDateAndOther(): void{    
-    // console.log('initDateAndOther---------', this.name)
-    // console.log('initDateAndOther---------', this.date)
+  public initDateAndOther(): void{
     if(this.name) {
       this.formInline.user = this.name;
     } 
     if(this.date && this.date.length) {
       this.formInline.date = this.date;
+      this.formInline.startDate = this.date[0]
+      this.formInline.endDate = this.date[1]
     }
   }
 

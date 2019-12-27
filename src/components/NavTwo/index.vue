@@ -1,13 +1,14 @@
 <template>
     <div class="v_nav_two">
-        <MySearchForm></MySearchForm>
+        <MySearchForm ref='searchForm'></MySearchForm>
         <Table stripe :columns="columns1" :data="data1"></Table>
     </div>
 </template>
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import data from '@/assets/mockData/table2.ts';
+// import data from '@/assets/mockData/table2.ts';
 import MySearchForm from '../common/SearchForm/index.vue';
+import { getLists } from '@/api/table';
 
 @Component({
     // 原components属性
@@ -71,8 +72,28 @@ export default class NavTwo extends Vue {
 
     // 生命周期
     private created(): void{
+        this.initData()
+        
         // console.log('data-----', data.tableData)
-        this.data1 = data.tableData;
+        // this.data1 = data.tableData;
+    }
+
+    // methods
+    /**
+     * 初始化表格数据
+     */
+    private async initData() {
+        let from = {}
+        if(Object.keys(this.$refs).length && this.$refs.searchForm) {
+            let tempFrom = (this.$refs.searchForm as any).formInline
+            from = {
+                startDate: tempFrom.startDate,
+                endDate: tempFrom.endDate,
+                user: tempFrom.user
+            }
+        }
+        const { data } = await getLists(from);
+        this.data1 = data.items;
     }
 
 }
