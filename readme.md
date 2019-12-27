@@ -14,6 +14,7 @@
 * [版本说明](#版本说明)
 * [文件及运行说明](#文件及运行说明)
 * [备注说明](#备注说明)
+* [项目展示图](#项目展示图)  
 
 *****
 ### 项目环境
@@ -114,5 +115,20 @@
 1. **UI组件库：iviewUI标签的使用**  
     1. 注意 `<Switch>` 和 `<Circle>` 这两个标签的使用
         * 需要改成 `<i-switch>` 和 `<i-circle>` 才能正常使用，参考[这里](https://www.iviewui.com/docs/guide/start "快速上手 - iVeiw")  
+
+
+*****
+### 项目展示图
+-----
+
+|展示图|
+|---
+|![image](https://github.com/HilaryHA/VueTypeScriptSystem/blob/master/static/img/showGif/1_0.gif)
+|![image](https://github.com/HilaryHA/VueTypeScriptSystem/blob/master/static/img/showGif/1_1.gif)
+|![image](https://github.com/HilaryHA/VueTypeScriptSystem/blob/master/static/img/showGif/1_2.gif)
+|![image](https://github.com/HilaryHA/VueTypeScriptSystem/blob/master/static/img/showGif/1_3.gif)
+
+
+
 
 ******
