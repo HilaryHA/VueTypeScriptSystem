@@ -1,5 +1,5 @@
 # VueTypeScriptSystem
-> This is the background management system of Vue+TypeScript+Vuex+vue-i18n, which includes basic operations such as processing of store data, internationalization language, and value transmission of parent and child components.  
+> This is the background management system of Vue+TypeScript+Vuex+vue-i18n+Node.js, which includes basic operations such as processing of store data, internationalization language, and value transmission of parent and child components.  
 （这是Vue+TypeScript+Vuex+vue-i18n的后台管理系统，包含store数据的处理、国际化语言、父子组件传值等基本操作。）
 
 ****
@@ -19,7 +19,7 @@
 *****
 ### 项目环境
 -----
-1. 由 `Vue + TypeScript + VueCli4 + Vuex + vue-i18n` 等组成
+1. 由 `Vue + TypeScript + VueCli4 + Vuex + vue-i18n + Node.js` 等组成
   【前端】页面结合 `IviewUI` 组件库 和 `Vue` 组件库 进行展示
   【数据】选择 `Mock.js` 产生随机数据 
 
