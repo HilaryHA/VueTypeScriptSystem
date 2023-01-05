@@ -38,7 +38,7 @@
     "@vue/cli-plugin-router": "^4.0.0",
     "@vue/cli-plugin-typescript": "^4.0.0",
     "@vue/cli-plugin-vuex": "^4.0.0",
-    "@vue/cli-service": "^4.0.0",
+    "@vue/cli-service": "^5.0.8",
     "babel-core": "^7.0.0-bridge.0",
     "compression": "^1.7.4",
     "faker": "^4.1.0",
