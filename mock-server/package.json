@@ -9,12 +9,12 @@
   "main": "app.ts",
   "dependencies": {
     "express": "^4.12.3",
-    "swagger-express-mw": "^0.1.0",
+    "swagger-express-mw": "^0.7.0",
     "swagger-tools": "^0.10.4"
   },
   "devDependencies": {
     "should": "^7.1.0",
-    "supertest": "^1.0.0"
+    "supertest": "^6.3.3"
   },
   "scripts": {
     "start": "cross-env node app.ts",
